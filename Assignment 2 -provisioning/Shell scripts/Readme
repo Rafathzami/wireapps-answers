@@ -1,0 +1,41 @@
+
+
+
+Shell scripts 
+--------------------
+
+Just mak sure you set executable permissions to the scripts 
+
+chmod +x 
+
+
+
+
+
+
+
+
+Prometheus 
+----------------
+Add this to prometheus.yml so we can add a dashboard 
+
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'node'
+    static_configs:
+      - targets: ['localhost:5000']
+
+
+
+
+# and install node exporter 
+
+wget https://github.com/prometheus/node_exporter/releases/download/v1.1.2/node_exporter-1.1.2.linux-amd64.tar.gz
+tar xvf node_exporter-1.1.2.linux-amd64.tar.gz
+cd node_exporter-1.1.2.linux-amd64
+./node_exporter
+
+
+Add the data source and create a dashboard 
