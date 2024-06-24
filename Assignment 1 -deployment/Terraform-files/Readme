@@ -1,0 +1,11 @@
+Login and Initialize Terraform 
+az login
+
+
+terraform init
+
+terraform init
+
+Apply the terrraform code 
+
+terraform apply
